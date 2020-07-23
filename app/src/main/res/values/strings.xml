@@ -4,5 +4,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-    <string name="login">LogIn</string>
+    <string name="login">SignIn</string>
+    <string name="signUp">SignUp</string>
+    <string name="farmer">Farmer</string>
+    <string name="wholeSeller">WholeSeller</string>
+    <string name="agent">Agent</string>
+
+    <string name="verifysms">Waiting to automatically detect an SMS sent to</string>
 </resources>

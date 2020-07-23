@@ -1,4 +1,4 @@
-package com.example.agroevolution;
+package com.example.agroevolution.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.agroevolution.Activity.LogInActivity;
+import com.example.agroevolution.R;
 
 public class MainActivity extends AppCompatActivity {
 
