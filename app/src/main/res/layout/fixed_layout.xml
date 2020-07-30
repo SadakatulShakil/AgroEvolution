@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="Upload Your Fixed Product Now"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/fixedProductImageView"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_upload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/tvFixedProductName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/background_et"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Product Name"
+        android:imeOptions="actionNext"
+        android:inputType="textCapWords"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fixedProductImageView" />
+
+    <EditText
+        android:id="@+id/tvFixedProductDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_et"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Description"
+        android:imeOptions="actionNext"
+        android:inputType="textCapWords"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFixedProductName" />
+
+    <EditText
+        android:id="@+id/tvFixedProductPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+       android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/background_et"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Product price"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFixedProductDescription" />
+
+    <EditText
+        android:id="@+id/tvFixedLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/background_et"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Location (e.g. Upazilla, District)"
+        android:imeOptions="actionDone"
+        android:inputType="textCapWords"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/tvFixedProductPrice" />
+
+    <Button
+        android:id="@+id/UploadFixedProductBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:background="@drawable/round_txt_design"
+        android:backgroundTint="@color/colorPrimary"
+        android:elevation="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="Upload"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/tvFixedLocation" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

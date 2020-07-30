@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="Upload Your Auction Product Now"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/auctionProductimageView"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_upload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <EditText
+        android:id="@+id/tvAuctionProductName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/background_et"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Product Name"
+        android:imeOptions="actionNext"
+        android:inputType="textCapWords"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auctionProductimageView" />
+
+    <EditText
+        android:id="@+id/tvAuctionProductDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/background_et"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Description"
+        android:imeOptions="actionNext"
+        android:inputType="textCapWords"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAuctionProductName" />
+
+    <EditText
+        android:id="@+id/tvAuctionMinPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/background_et"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Product Min price"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAuctionProductDescription" />
+
+    <EditText
+        android:id="@+id/tvAuctionStartTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/background_et"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Start Time"
+        android:imeOptions="actionNext"
+        android:inputType="textCapWords"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAuctionMinPrice" />
+
+    <EditText
+        android:id="@+id/tvAuctionEndTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/background_et"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="End Time"
+        android:imeOptions="actionNext"
+        android:inputType="textCapWords"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAuctionStartTime" />
+
+    <EditText
+        android:id="@+id/tvAuctionProductLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/background_et"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Location (e.g. Upazilla, District)"
+        android:imeOptions="actionDone"
+        android:inputType="textCapWords"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAuctionEndTime" />
+
+
+    <Button
+        android:id="@+id/UploadAuctionProductBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/round_txt_design"
+        android:backgroundTint="@color/colorPrimary"
+        android:elevation="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="Upload"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAuctionProductLocation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

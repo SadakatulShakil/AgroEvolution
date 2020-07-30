@@ -9,17 +9,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.agroevolution.R;
 
 public class FarmerActivity extends AppCompatActivity {
     private Toolbar dToolbar;
     private RadioGroup uploadTypeGroup, presentProductGroup;
-    private TextView futureDemo, presentDemo;
-    private ConstraintLayout futureLayout, fixedLayout, auctionLayout;
+    private String uploadType;
+    private View futureLayout, fixedLayout, auctionLayout;
+    private ConstraintLayout presentTypeOfProduct;
     private static final String TAG = "FarmerActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +32,8 @@ public class FarmerActivity extends AppCompatActivity {
 
         init();
 
-        initView();
-
         dToolbar.setTitle(getString(R.string.farmer));
-        dToolbar.setNavigationIcon(R.drawable.ic_arrow);
+       /* dToolbar.setNavigationIcon(R.drawable.ic_arrow);
 
         dToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,46 +41,52 @@ public class FarmerActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+*/
 
-        RadioButton rbType1 = (RadioButton) uploadTypeGroup.findViewById(uploadTypeGroup.getCheckedRadioButtonId());
-        String uploadType = (String) rbType1.getText();
+        uploadTypeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton rbType1 = (RadioButton) uploadTypeGroup.findViewById(uploadTypeGroup.getCheckedRadioButtonId());
+                uploadType = (String) rbType1.getText();
 
-        Log.d(TAG, "onCreate: " +uploadType);
+                Toast.makeText(FarmerActivity.this, uploadType+ " is Clicked!", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "onCreate: " +uploadType);
 
-        RadioButton rbType2 = (RadioButton) presentProductGroup.findViewById(presentProductGroup.getCheckedRadioButtonId());
-        String presentProductType = (String) rbType2.getText();
-        Log.d(TAG, "onCreate: " +presentProductType);
+                if(uploadType.equals("Future")){
+                    futureLayout.setVisibility(View.VISIBLE);
+                    presentTypeOfProduct.setVisibility(View.GONE);
+                    auctionLayout.setVisibility(View.GONE);
+                    fixedLayout.setVisibility(View.GONE);
 
+                }
+                else if(uploadType.equals("Present")){
+                    presentTypeOfProduct.setVisibility(View.VISIBLE);
+                    futureLayout.setVisibility(View.GONE);
+                }
 
-        if(uploadType.equals("Future")){
-            futureDemo.setVisibility(View.VISIBLE);
-            futureLayout.setVisibility(View.VISIBLE);
-            presentDemo.setVisibility(View.GONE);
-            presentProductGroup.setVisibility(View.GONE);
-            auctionLayout.setVisibility(View.GONE);
-            fixedLayout.setVisibility(View.GONE);
-            auctionLayout.setVisibility(View.GONE);
-        }
-       /* else if(uploadType.equals("Present")){
-            futureDemo.setVisibility(View.GONE);
-            futureLayout.setVisibility(View.GONE);
-            presentDemo.setVisibility(View.VISIBLE);
-            presentProductGroup.setVisibility(View.VISIBLE);
-        }
+            }
+        });
 
-        if(presentProductType.equals("Fixed")){
-            fixedLayout.setVisibility(View.VISIBLE);
-            auctionLayout.setVisibility(View.GONE);
-        }
-        else if(presentProductType.equals("Auction")){
-            fixedLayout.setVisibility(View.GONE);
-            auctionLayout.setVisibility(View.VISIBLE);
-        }*/
+        presentProductGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton rbType2 = (RadioButton) presentProductGroup.findViewById(presentProductGroup.getCheckedRadioButtonId());
+                String presentProductType = (String) rbType2.getText();
 
+                Toast.makeText(FarmerActivity.this, presentProductType+ " is Clicked!", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "onCreate: " +presentProductType);
 
-    }
+                if(presentProductType.equals("Fixed")){
+                    fixedLayout.setVisibility(View.VISIBLE);
+                    auctionLayout.setVisibility(View.GONE);
+                }
 
-    private void initView() {
+                else if(presentProductType.equals("Auction")){
+                    fixedLayout.setVisibility(View.GONE);
+                    auctionLayout.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
     }
 
@@ -89,12 +97,11 @@ public class FarmerActivity extends AppCompatActivity {
 
         uploadTypeGroup = findViewById(R.id.typeOfUpload);
         presentProductGroup = findViewById(R.id.typeOfPresentProduct);
+        presentTypeOfProduct = findViewById(R.id.presentProductOption);
 
-        futureDemo = findViewById(R.id.demoFutureProduct);
-        presentDemo = findViewById(R.id.demoPresentProductType);
 
-        futureLayout = findViewById(R.id.futureProductLayout);
-        fixedLayout = findViewById(R.id.fixedProductLayout);
-        auctionLayout = findViewById(R.id.auctionProductLayout);
+        futureLayout = findViewById(R.id.uploadFutureProduct);
+        fixedLayout = findViewById(R.id.uploadFixedProduct);
+        auctionLayout = findViewById(R.id.uploadAuctionProduct);
     }
 }

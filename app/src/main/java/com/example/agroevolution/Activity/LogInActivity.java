@@ -23,14 +23,14 @@ public class LogInActivity extends AppCompatActivity {
 
         initViews();
 
-        Intent intent = getIntent();
-        final String userType = intent.getStringExtra("userType");
+        /*Intent intent = getIntent();
+        final String userType = intent.getStringExtra("userType");*/
 
         dToolbar.setTitle(getString(R.string.login));
         dToolbar.setNavigationIcon(R.drawable.ic_arrow);
 
 
-        if(userType.equals("farmer")){
+       /* if(userType.equals("farmer")){
             userTypeTV.setText("Farmer");
 
         }else if(userType.equals("agent")){
@@ -38,13 +38,13 @@ public class LogInActivity extends AppCompatActivity {
 
         }else if(userType.equals("wholeSeller")){
             userTypeTV.setText("WholeSeller");
-        }
+        }*/
 
         signUpBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LogInActivity.this, SignUpActivity.class);
-                intent.putExtra("userType", userType);
+                //intent.putExtra("userType", userType);
                 startActivity(intent);
             }
         });
@@ -59,7 +59,7 @@ public class LogInActivity extends AppCompatActivity {
 
     private void initViews() {
         signUpBt = findViewById(R.id.signUpBTN);
-        userTypeTV = findViewById(R.id.tvUserType);
+        //userTypeTV = findViewById(R.id.tvUserType);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             dToolbar = findViewById(R.id.toolbar);
         }
